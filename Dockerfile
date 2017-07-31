@@ -11,7 +11,7 @@ RUN apt-get update \
     && apt-get update \
     && apt-get install -y --force-yes --no-install-recommends \
         libreoffice \
-        python-pip python-dev build-essential \
+        python3-pip python3-dev build-essential \
 
     && apt-get autoclean \
     && apt-get autoremove \
