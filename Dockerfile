@@ -21,3 +21,5 @@ RUN cd /usr/bin \
 	&& ln -s pydoc3 pydoc \
 	&& ln -s python3 python \
 	&& ln -s python3-config python-config
+
+CMD soffice --nologo --norestore --invisible --headless --accept='socket,host=0,port=8997,tcpNoDelay=1;urp;'
