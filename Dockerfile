@@ -11,6 +11,9 @@ RUN apt-get update \
     && apt-get update \
     && apt-get install -y --force-yes --no-install-recommends \
         libreoffice \
+	firefox \
+        fonts-wqy-microhei \
+        language-pack-zh-hant language-pack-gnome-zh-hant firefox-locale-zh-hant libreoffice-l10n-zh-tw \
         python3-pip python3-dev build-essential \
 
     && apt-get autoclean \
