@@ -27,4 +27,14 @@ RUN cd /usr/bin \
 	&& ln -s pip3 pip \
 	&& ln -s python3-config python-config
 
+VOLUME '/var/file_base'
+
+RUN pip install --upgrade pip \
+    && pip install setuptools \
+    && pip install pyoo \
+    && pip install openpyxl \
+    && pip install tornado \
+    && pip install Wand
+
+
 CMD soffice --nologo --norestore --invisible --headless --accept='socket,host=0,port=8997,tcpNoDelay=1;urp;'
