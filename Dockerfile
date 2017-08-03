@@ -13,6 +13,7 @@ RUN apt-get update \
         libreoffice \
 	firefox \
         fonts-wqy-microhei \
+	imagemagick \
         language-pack-zh-hant language-pack-gnome-zh-hant firefox-locale-zh-hant libreoffice-l10n-zh-tw \
         python3-pip python3-dev build-essential \
 
