@@ -14,7 +14,6 @@ RUN apt-get update \
 	firefox \
         fonts-wqy-microhei \
 	ghostscript \
-	imagemagick \
         language-pack-zh-hant language-pack-gnome-zh-hant firefox-locale-zh-hant libreoffice-l10n-zh-tw \
         python3-pip python3-dev build-essential \
 
@@ -34,8 +33,7 @@ RUN pip install --upgrade pip \
     && pip install setuptools \
     && pip install pyoo \
     && pip install openpyxl \
-    && pip install tornado \
-    && pip install Wand
+    && pip install tornado
 
 
 CMD soffice --nologo --norestore --invisible --headless --accept='socket,host=0,port=8997,tcpNoDelay=1;urp;'
