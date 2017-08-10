@@ -21,11 +21,11 @@ RUN apt-get update \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --upgrade pip \
-    && pip install setuptools \
-    && pip install pyoo \
-    && pip install openpyxl \
-    && pip install tornado
+RUN cd /usr/bin \
+	&& ln -s pydoc3 pydoc \
+	&& ln -s python3 python \
+	&& ln -s pip3 pip \
+	&& ln -s python3-config python-config
 
 
 CMD soffice --nologo --norestore --invisible --headless --accept='socket,host=0,port=8997,tcpNoDelay=1;urp;'
