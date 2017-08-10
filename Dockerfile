@@ -21,14 +21,6 @@ RUN apt-get update \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
 
-RUN cd /usr/bin \
-	&& ln -s pydoc3 pydoc \
-	&& ln -s python3 python \
-	&& ln -s pip3 pip \
-	&& ln -s python3-config python-config
-
-VOLUME '/var/file_base'
-
 RUN pip install --upgrade pip \
     && pip install setuptools \
     && pip install pyoo \
