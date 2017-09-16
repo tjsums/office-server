@@ -21,7 +21,9 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 COPY ./fonts /usr/share/fonts/add_on_fonts
 
-RUN mkfontscale && mkfontdir && fc-cache
+RUN mkfontscale
+RUN mkfontdir
+RUN fc-cache
 
 RUN cd /usr/bin \
 	&& ln -s pydoc3 pydoc \
