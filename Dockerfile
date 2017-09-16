@@ -21,6 +21,14 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 COPY ./fonts /usr/share/fonts/add_on_fonts
 
+RUN apt-get update \
+    && apt-get install -y --force-yes --no-install-recommends \
+        ttf-mscorefonts-installer \
+	fontconfig \
+    && apt-get autoclean \
+    && apt-get autoremove \
+    && rm -rf /var/lib/apt/lists/*
+
 RUN mkfontscale
 RUN mkfontdir
 RUN fc-cache
