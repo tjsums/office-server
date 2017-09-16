@@ -12,7 +12,6 @@ RUN apt-get update \
     && apt-get install -y --force-yes --no-install-recommends \
         libreoffice \
 	firefox \
-        fonts-wqy-microhei \
 	ghostscript \
         language-pack-zh-hant language-pack-gnome-zh-hant firefox-locale-zh-hant libreoffice-l10n-zh-tw \
         python3-pip python3-dev build-essential \
@@ -20,6 +19,9 @@ RUN apt-get update \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
+COPY ./fonts /usr/share/fonts/add_on_fonts
+
+RUN mkfontscale && mkfontdir && fc-cache
 
 RUN cd /usr/bin \
 	&& ln -s pydoc3 pydoc \
