@@ -12,22 +12,15 @@ RUN apt-get update \
     && apt-get install -y --force-yes --no-install-recommends \
         libreoffice \
 	firefox \
+	ttf-mscorefonts-installer \
+	fontconfig \
 	ghostscript \
         language-pack-zh-hant language-pack-gnome-zh-hant firefox-locale-zh-hant libreoffice-l10n-zh-tw \
         python3-pip python3-dev build-essential \
-
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
 COPY ./fonts /usr/share/fonts/add_on_fonts
-
-RUN apt-get update \
-    && apt-get install -y --force-yes --no-install-recommends \
-        ttf-mscorefonts-installer \
-	fontconfig \
-    && apt-get autoclean \
-    && apt-get autoremove \
-    && rm -rf /var/lib/apt/lists/*
 
 RUN mkfontscale
 RUN mkfontdir
